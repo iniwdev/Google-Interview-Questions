@@ -32,7 +32,6 @@ public:
         vector<int> ans(n,0);
         vector<int> sorted_nums = nums;
         sort(sorted_nums.begin(), sorted_nums.end());
-        sorted_nums.erase(unique(sorted_nums.begin(), sorted_nums.end()), sorted_nums.end());
         FenwickTree ft(sorted_nums.size());
         for (int i = n - 1; i >= 0; --i) {
             int rank = lower_bound(sorted_nums.begin(), sorted_nums.end(), nums[i]) - sorted_nums.begin() + 1;
